@@ -1,5 +1,5 @@
 {
-  "name": "wdiocucumber-docker-typescript",
+  "name": "wdio-typescript",
   "version": "1.0.0",
   "description": "Docker Hosted UI Testing with WebDriverIO & Cucumber-JS, Written in TypeScript",
   "scripts": {
