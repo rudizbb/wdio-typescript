@@ -1,0 +1,9 @@
+.idea
+src/node_modules/
+src/tsrc/
+src/.env
+src/package-lock.json
+node_modules
+errorShots
+package-lock.json
+
