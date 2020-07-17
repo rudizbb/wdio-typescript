@@ -1,13 +1,18 @@
 class HomePageObject {
-
-  private _url: string = '/en';
+  private _url: string = "/en";
   private _headerMenu: string = '//a[@class="a_menu"]';
-  private _categoryTitles: string ='//h2/a'
-  private _subCategoryTitles: string ='//h4/a'
+  private _categoryTitles: string = "//h2/a";
+  private _subCategoryTitles: string = "//h4/a";
 
-  public get headerMenu() { return browser.element(this._headerMenu); }
-  public get categoryTitles() { return browser.element(this._categoryTitles); }
-  public get subCategoryTitles() { return browser.element(this._subCategoryTitles); }
+  public get headerMenu() {
+    return browser.element(this._headerMenu);
+  }
+  public get categoryTitles() {
+    return browser.element(this._categoryTitles);
+  }
+  public get subCategoryTitles() {
+    return browser.element(this._subCategoryTitles);
+  }
 
   public openHome(): void {
     browser.deleteCookie();
@@ -27,7 +32,9 @@ class HomePageObject {
 
   public openSubCategory(subCategory: string): void {
     browser.waitForVisible(this._subCategoryTitles);
-    browser.click(this._subCategoryTitles + `[contains(text(),"${subCategory}")]`);
+    browser.click(
+      this._subCategoryTitles + `[contains(text(),"${subCategory}")]`
+    );
   }
 }
 
