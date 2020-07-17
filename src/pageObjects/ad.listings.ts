@@ -1,6 +1,6 @@
 class AdListingObject {
 
-  private _adCheckbox: string = "(//input[@type='checkbox'])"
+  private _adCheckbox: string = "//input[@type='checkbox']"
   private _alertMessage: string = '//div[@id="alert_msg"]'
   private _textLink: string = '//a[@class="a9a"]'
 
@@ -18,17 +18,19 @@ class AdListingObject {
     }
   }
 
-  public countAds(): number {
-    return browser.elements('//input[@type="checkbox"]').value.length;
+  public countAds(): number { 
+    browser.waitForVisible(this._adCheckbox);
+    return browser.elements(this._adCheckbox).value.length;
   };
 
-
   public openLink(title: string): void {
+    browser.waitForVisible(this._textLink);
     browser.click(this._textLink + `[text()="${title}"]`);
   }
 
   public selectAdCheckbox(index: number): void {
-    browser.click(this._adCheckbox + `[${index}]`);
+    browser.waitForVisible(this._adCheckbox);
+    browser.click('('+this._adCheckbox+')'+`[${index}]`);
   }
 }
 

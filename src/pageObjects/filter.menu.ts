@@ -12,10 +12,13 @@ class FilterMenuObject {
 
   public selectFilter(position: string, label: string, value: string): void {
     if (position === 'upper') {
+      browser.waitForVisible(this._firstLineFilters);
       browser.click(this._firstLineFilters + `[contains(text(),"${label}")]`);
     } else {
+      browser.waitForVisible(this._secondLineFilters);
       browser.click(this._secondLineFilters + `[contains(text(),"${label}")]`);
     }
+    browser.waitForVisible(this._filterOption);
     browser.click(this._filterOption + `[text()="${value}"]`);
   }
 }

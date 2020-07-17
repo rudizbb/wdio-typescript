@@ -19,7 +19,7 @@ exports.config = {
     coloredLogs: true,
     screenshotPath: './errorShots/',
     baseUrl: 'https://www.ss.com/en',
-    waitforTimeout: 25000,
+    waitforTimeout: 10000,
     connectionRetryTimeout: 90000,
     connectionRetryCount: 3,
     framework: 'cucumber',

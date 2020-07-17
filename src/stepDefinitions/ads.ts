@@ -16,7 +16,8 @@ Then(
     });
 
 Then(
-    /^I see "(\d+)" saved memo$/,
-    (results: number) => {
-        expect(browser.elements('//*[@type="checkbox"]').value.length).to.equal(results);
+    /^I should see "(\d+)" ads in saved memo list$/,
+    (expectedAds: number) => {
+        let ads = AdListing.countAds();
+        expect(ads).to.equal(expectedAds);
     });
