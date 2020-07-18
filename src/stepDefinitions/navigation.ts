@@ -2,7 +2,6 @@ import { expect } from "chai";
 import { Given, Then, When } from "cucumber";
 import { HomePage } from "../pageObjects/home.page";
 import { AdListing } from "../pageObjects/ad.listings";
-import { Filters } from "../pageObjects/filters";
 
 Given(/^I enter the URL of the homepage$/, () => {
   HomePage.openHome();

@@ -19,6 +19,13 @@ Then(/^I should see "(\d+)" ads in saved memo list$/, (expectedAds: number) => {
   expect(ads).to.equal(expectedAds);
 });
 
+Then(
+  /^I should see ads displayed in (Album|List) view$/,
+  (displayType: string) => {
+    AdListing.checkDisplayType(displayType);
+  }
+);
+
 Then(/^I click on the picture of the ad number "(\d+)"$/, (index: number) => {
   AdListing.openAd(index);
 });

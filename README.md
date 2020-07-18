@@ -1,11 +1,13 @@
 ## Home Task from Evolution Gaming
-Main goal was to create automation setup that tests the "Memo" functionality on SS.com/en site.
+
+Main goal was to create a POC test automation setup for the "Memo" functionality on SS.com/en site.
 
 ### Tech Stack
-* [WebdriverIO v4](http://webdriver.io/)
-* [Typescript(Javascript) v3](https://www.typescriptlang.org/)
-* [Cucumber v6](https://cucumber.io/)
-* [Chai](https://www.chaijs.com/)
+
+- [WebdriverIO v4](http://webdriver.io/)
+- [Typescript(Javascript) v3](https://www.typescriptlang.org/)
+- [Cucumber v6](https://cucumber.io/)
+- [Chai](https://www.chaijs.com/)
 
 ## Getting Started
 
@@ -18,16 +20,16 @@ Main goal was to create automation setup that tests the "Memo" functionality on 
 
 ### Setup Scripts
 
-1. `git clone <link to this git repo>` - clone the repository into a local folder
+1. `git clone https://github.com/rudizbb/wdio-typescript.git` - clone this repository onto your local drive
 2. `docker-compose run --rm webdriverio npm install` - install all dependencies into a container
 
 Optional - build docker image locally with `docker build Dockerfile/. -t wdiodocker` or `npm run dockerbuild`
 
-*Note*: Don't forget to update your `docker-compose.yml` to use the local docker image
+_Note_: Don't forget to update your `docker-compose.yml` to use the local docker image
 
 ### Compiling tests
 
-3. `docker-compose run --rm webdriverio npm run build` - connect to the container and compile the typeScript src files
+3. `docker-compose run --rm webdriverio npm run build` - connect to the container and compile the TypeScript src files
 
 ## Running Tests
 
@@ -37,16 +39,9 @@ The following command will trigger Selenium in a locally hosted Docker container
 
 ## Configuration
 
-`tsconfig.json` defines the `outDir` where Typescript will transpile to.  This directory is deleted by the `npm run clean` or `npm run clean-build` commands.
+`tsconfig.json` defines the `outDir` where Typescript will transpile to. This directory is deleted by the `npm run clean` or `npm run clean-build` commands.
 
-`conf/local.conf.js` define the configuration of webdriverio.  
-- `specs: [...]` defines matchers for the cucumber feature files to run as default.  
-- `suites: {...}` defines named matcher sets for different suite types (e.g. smoke, login, etc.)
-- `services` and `capabilities` define the nature of the selenium execution.  Most commonly support local (standalone) execution or Saucelabs.
-- `baseUrl:` defines the default/base URL to use for the tests.  This is most commonly the landing URL for the desired environment & app.
-- `require: [...]` defines the matchers for the step definitions to use in the run.
-
-For more information on configuration, see http://webdriver.io/guide/testrunner/configurationfile.html
+`conf/local.conf.js` define the configuration of webdriverio.
 
 ## Writing Tests
 
@@ -77,6 +72,7 @@ Then(
     });
 
 ```
+
 ## Page Objects
 
 This framework is strictly written using page-object design pattern.
@@ -106,5 +102,6 @@ class LoginPageObject {
 export const LoginPage = new LoginPageObject();
 ```
 
-## Debugging
-Running tests on Selenoid with: `npm tun test-debug`
+## Troubleshooting
+
+Screenshots of failed tests are saved in `src/errorShots` after each run
