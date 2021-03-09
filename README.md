@@ -1,4 +1,4 @@
-## Home Task from Evolution Gaming
+## WebdriverIO + TypeScript POC
 
 Main goal was to create a POC test automation setup for the "Memo" functionality on SS.com/en site.
 
